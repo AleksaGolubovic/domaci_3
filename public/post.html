@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./css/post.css" />
+    <title>Post Page</title>
+</head>
+
+<body>
+  <div id="buttonsContainer">
+    <button type="button" id="deleteDugme" onclick="deletePost()">Obriši Post</button>
+    <button type="button" id="returnToHome" onclick="returnToHome()">Home</button>
+  </div>
+ 
+
+    <div class="image-container">
+      <img id="mainImage" class="main-image" src="" alt="Main Image">
+      <div id="deskripcija"></div>
+      <div id="thumbnailGalleryContainer" class="thumbnail-gallery-container">
+        <div id="thumbnailGallery" class="thumbnail-gallery"></div>
+      </div>
+      <br>
+      <label text="Posted by: "><a id="userPosted">
+      <div id="deskripcija"></div>
+    </div>
+    
+    <div id="rating_and_comments_container">
+      <div id="ratingContainer" class="rating-container"></div>
+      <div id="newComment">
+        <textarea id="newCommentText" placeholder="Dodajte komentar"></textarea>
+        <button id="addCommentButton">Add</button>
+      </div>
+      <div class="comments-container" id="commentsContainer"></div>
+    </div>
+
+    <div class="user-info">
+      <div id="user-inside">
+      <img id="user-avatar" src="./images/user-avatar.png" alt="User Avatar">
+      <div>
+          <h2 id="poster-name">User Name</h2>
+          <p>Number of Posts: <span id="postCount">0</span></p>
+          <p>Average Post Rating: <span id="averageRating">0</span></p>
+      </div>
+      </div>
+  </div>
+
+    <script src="./js/post.js"></script>
+  </body>
+</html>

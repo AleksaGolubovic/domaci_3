@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Map Page</title>
+</head>
+<body>
+  <div id="map" onmouseover="showPopout()"></div>
+
+  <div class="sidebar" id="sidebarMain">
+      <img class="msi" id="selectAddSidebar" onclick="openAddSidebar()" src="./images/add.png">
+      <br>
+      <br>
+      <img class="msi" id="selectSearchSidebar" onclick="openSearchSidebar()" src="./images/search.png">
+  </div>
+
+  <div class="sidebar" id="sidebarSearchLocation">
+      <img id="logout-image" onclick="confirmLogout()" src="./images/logout.png">
+      <img id="back-image" onclick="returnToHome()" src="./images/back.png">
+      <br>
+      <h2>Odaberi Grad</h2>
+    <ul id="cityList">
+      <li onclick="changeCity([44.7872, 20.4573])">Beograd</li>
+      <li onclick="changeCity([45.2671, 19.8335])">Novi Sad</li>
+      <li onclick="changeCity([43.3194, 21.8960])">Niš</li>
+    </ul>
+    <hr>
+      <br>
+      <label for="searchCategory">Select Category:</label>
+      <select id="searchCategory" onchange="displayCategoryMarkers()">
+          
+      </select>
+
+      <label for="ratingSelect">Select Rating:</label>
+      <select id="ratingSelect" onchange="handleRatingChange()">
+          <option value="all">All Ratings</option>
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+      </select>
+  </div>
+
+  <div class="sidebar" id="sidebarAddLocation">
+      <img id="logout-image" onclick="confirmLogout()" src="./images/logout.png">
+      <img id="back-image" onclick="returnToHome()" src="./images/back.png">
+    <br>
+
+    
+
+    <h2>Odaberi Grad</h2>
+    <ul id="cityList">
+      <li onclick="changeCity([44.7872, 20.4573])">Beograd</li>
+      <li onclick="changeCity([45.2671, 19.8335])">Novi Sad</li>
+      <li onclick="changeCity([43.3194, 21.8960])">Niš</li>
+    </ul>
+    <hr>
+      <h2>Add Location</h2>
+      <form id="locationForm">
+
+          
+          <label for="category">Category:</label>
+          <select id="category" name="category" required>
+             
+          </select>
+          <br>
+          <br>
+
+          <label for="newCategory">New Category:</label>
+          <input type="text" id="newCategory" name="newCategory" placeholder="New Category">
+
+          <label for="description">Description:</label>
+          <textarea type="text" id="description" name="locationName"></textarea>
+          <br>
+          <br>
+
+
+          <div id="coordinatesDisplay">Select a point on the map.</div>
+
+     
+          <label for="photo">Attach Photos:</label>
+          <input type="file" id="photo" name="photo" accept="image/*" multiple>
+
+
+        
+          <button type="button" id="addLocationButton" onclick="addLocation()" enabled>Add Location</button>
+
+          
+      </form>
+  </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="./js/home.js"></script>
+</body>
+</html>

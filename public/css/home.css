@@ -1,0 +1,279 @@
+body {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #fff;
+  overflow: hidden;
+}
+
+#map {
+  flex: 10;
+  height: 100vh;
+  background-color: #1e1e1e;
+  z-index: 1;
+}
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.container {
+  display: flex;
+}
+
+.msi {
+  flex: 5;
+  height: 50%;
+  width: 50%;
+  padding-bottom: 10%;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+#sidebarMain {
+  align-items: center;
+  padding: 1%;
+  background-color: #3e3e3a;
+  border-radius: 8px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.7);
+ 
+  background-size: cover;
+  opacity: 95%;
+  background-position: center;
+  background: linear-gradient(45deg, #030303ea 10%, rgb(19, 19, 19) 50%, #030303ea 100%);
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  top: 40%;
+ display: flex;
+  flex-direction: column;
+  width: 5%;
+  animation: slideInFromRight 0.125s ease-out;
+}
+
+#sidebarAddLocation {
+  right: 0;
+  max-width: 300px;
+  padding: 20px;
+  background-color: #3e3e3a;
+  border-radius: 8px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.7);
+ 
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(45deg, #030303ea 10%, rgb(19, 19, 19) 50%, #030303ea 100%);
+  position: relative;
+  opacity: 95%;
+  animation: slideInFromRight 0.125s ease-out;
+  z-index: 100;
+ 
+}
+
+#sidebarSearchLocation {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #3e3e3a;
+  border-radius: 8px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.7);
+ 
+  background-size: cover;
+  opacity: 95%;
+  background-position: center;
+  background: linear-gradient(45deg, #030303ea 10%, rgb(19, 19, 19) 50%, #030303ea 100%);
+  position: relative;
+  animation: slideInFromRight 0.125s ease-out;
+  z-index: 100;
+  width: 29%;
+}
+
+#sidebarAddLocation h2 {
+font-size: 90%;
+  background-color: #3e3e3a00;
+  border-radius: 8px;
+ 
+  opacity: 100%;
+}
+
+
+
+li {
+  border-radius: 8px;
+  font-size: 90%;
+}
+
+hr {
+  border: 1px solid #48abe0;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 2px #48abe083;
+}
+
+textarea {
+  width: 97%;
+  border-radius: 8px;
+  background-color: #1b1b1b;
+  color:#888;
+  padding-left: 2%;
+  resize:none;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
+
+#cityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cityList li {
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+#cityList li:hover {
+  background: #1b1b1b;
+}
+
+#locationForm {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background: #4444443c;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+input::file-selector-button {
+  font-size: 90%;
+  flex: 2;
+  margin-right: 5%;
+  padding: 1%;
+  box-sizing: border-box;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+#logout-image, #back-image{
+  position: absolute;
+  left: 0;
+  padding-left: 6%;
+  max-width: 20px;
+}
+
+#back-image{
+  left: unset;
+  padding-left: unset;
+  right: 0;
+  padding-right: 6%;
+}
+
+#addLocationButton {
+  flex: 2;
+  padding: 10px;
+  width: 50%;
+    background: linear-gradient(45deg, #007bff 10%, #116ed2 30%, #007bff 80%);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-clip: padding-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 4.5%;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+
+ #addLocationButton:hover{
+  flex: 2;
+  padding: 10px;
+  width: 50%;
+    padding: 10px;
+    background: linear-gradient(45deg, #7bbbff 20%, #6290c1 30%, #7bbbff 40%);
+    color: #414141;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-clip: padding-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 4.5%;
+  left: 50%;
+  transform: translateX(-50%);
+ }
+
+
+button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background: #4582a0;
+}
+
+#coordinatesDisplay {
+  margin-bottom: 10px;
+}
+
+
+#thumbnailButton{
+  flex: 1;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+#thumbnailUrl{
+  flex: 9;
+
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}
